@@ -1,11 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import store from './redux/store'
 
 
 function Cart() {
-  return (
+    const cartData = useSelector((state)=> state)
+    console.log(cartData)
+
+    return (
     <div>
-        <div className="row">
+        {/* <div className="row">
             <div className="col-md-4">
                 <img src={product.image} alt={product.title} height='200px' width='180px'/>
             </div>
@@ -21,7 +25,7 @@ function Cart() {
             <button className='btn -btn-outline-dark ' onClick={()=>handleButton(product)}>
                 <div className="fa fa-plus"></div>
             </button>
-        </div>
+        </div> */ }
     </div>
   )
 }
