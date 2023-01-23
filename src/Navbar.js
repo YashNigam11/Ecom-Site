@@ -60,7 +60,7 @@ export default function Navbar() {
               </NavLink>
               <NavLink className="btn btn-outline-dark ms-2" to="/cart">
                 <i className="fa fa-shopping-cart me-1 "></i>
-                Cart(0)
+                Cart({state.length})
               </NavLink>
             </div>
           </div>
