@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useContext} from "react";
 import { NavLink, useParams } from "react-router-dom";
 // import Skeleton from "react-loading-skeleton";
 import { useDispatch} from "react-redux";
 import { addCart } from "./redux/action";
+import { cartItems } from "./App";
 
 
 export default function Prod() {
+  const {items,setItems} = useContext(cartItems)
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   // console.log(productId)
 
-  const dispatch= useDispatch()
-  const addProduct = (product) =>{
-    dispatch(addCart(product));
+  // const dispatch= useDispatch()
+  // const addProduct = (product) =>{
+  //   dispatch(addCart(product));
 
+  // }
+  const addProduct= (product)=>{
+    setItems((prev)=>[...prev,product])
   }
   useEffect(() => {
     const getProduct = async () => {

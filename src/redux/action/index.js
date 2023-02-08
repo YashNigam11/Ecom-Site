@@ -13,6 +13,6 @@ export const delCart = (product)=>{
     return {
         type: 'DELCART',
         payload: product
-    }
+    }   
 
 }

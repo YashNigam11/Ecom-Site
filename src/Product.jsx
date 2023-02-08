@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 export default function Product() {
   const [data, setData] = useState([]);
@@ -15,7 +14,7 @@ export default function Product() {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
-        console.log(filter);
+        // console.log(filter);
       }
       return () => {
         componentMounted = false;
@@ -26,18 +25,7 @@ export default function Product() {
   const Loading = () => {
     return (
       <>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
+       Loading..............
       </>
     );
   };
